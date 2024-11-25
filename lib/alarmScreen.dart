@@ -26,9 +26,12 @@ class _AlarmscreenState extends State<Alarmscreen> {
         backgroundColor: Colors.grey[800],
         appBar: AppBar(
           backgroundColor: Colors.grey[800],
-          title: const Text(
-            'Alarm',
-            style: TextStyle(color: Colors.white,fontSize: 45,fontWeight: FontWeight.bold),
+          title: Padding(
+            padding: const EdgeInsets.only(top: 10,right: 5),
+            child: const Text(
+              'Alarm',
+              style: TextStyle(color: Colors.white,fontSize: 45,fontWeight: FontWeight.bold),
+            ),
           ),
         ),
         body: Column(
@@ -123,8 +126,9 @@ class _AlarmscreenState extends State<Alarmscreen> {
               context: context,
               builder: (BuildContext context) {
                 return AlertDialog(
-                  title: const Text("Choose an Action"),
-                  content: const Text("What would you like to do?"),
+                  actionsAlignment: MainAxisAlignment.spaceBetween,backgroundColor: Colors.grey[800],
+                  title: const Text("ALARM",style: TextStyle(color: Colors.white,fontSize: 35),),
+                  content: const Text("SET Alarm",style: TextStyle(color: Colors.white,fontSize: 25),),
                   actions: [
                     TextButton(
                       onPressed: () async {
@@ -169,7 +173,7 @@ class _AlarmscreenState extends State<Alarmscreen> {
                         }
                       },
                       child: const Text("Pick Time",
-                          style: TextStyle(color: Colors.blue)),
+                          style: TextStyle(color: Colors.green,fontSize: 20)),
                     ),
                     SizedBox(
                       width: 30,
@@ -179,7 +183,7 @@ class _AlarmscreenState extends State<Alarmscreen> {
                         Navigator.pop(context, 'Cancel');
                       },
                       child: const Text("Close",
-                          style: TextStyle(color: Colors.green)),
+                          style: TextStyle(color: Colors.red,fontSize: 20)),
                     ),
                   ],
                 );
